@@ -2,8 +2,8 @@ name: Events exercises
 
 on:
   schedule:
-    # Every minute
-    - cron: "*/1 * * * *"
+    # Every 5 minutes
+    - cron: "*/5 * * * *"
 
 jobs:
   print-event:

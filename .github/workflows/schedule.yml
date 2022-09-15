@@ -1,7 +1,12 @@
-name: Events exercises
+name: Schedule
 
 on:
-  workflow_dispatch:
+  schedule:
+    # Every 1 and half hours
+    - cron: "0 0,3,6,9,12,15,18,21 * * *"
+    - cron: "30 1,4,7,10,13,16,19,22 * * *"
+    # Every tuesday at 3am
+    - cron: "0 3 * * 2"
 
 jobs:
   print-event:

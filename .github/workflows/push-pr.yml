@@ -1,9 +1,5 @@
 name: Push & Pull request
 
-# Create two jobs inside a new workflow
-# When you have a push, execute both job
-# When you have a PR, execute only the first job.
-
 on:
   push:
 

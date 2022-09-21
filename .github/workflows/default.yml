@@ -1,0 +1,33 @@
+name: Node App CI
+
+on: 
+  push:
+    paths:
+      - "node-app/**"
+
+jobs:
+  test:
+    name: Test
+    
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        working-directory: node-app
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.17
+          cache: 'npm'
+          cache-dependency-path: node-app/package-lock.json
+      
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test

@@ -2,6 +2,7 @@ name: Push & Pull request
 
 on:
   push:
+  pull_request:
 
 jobs:
   print-event:
